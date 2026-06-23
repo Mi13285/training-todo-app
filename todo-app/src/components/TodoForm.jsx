@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 function TodoForm ({addToDo}) {
-    const [text, setText] = useState("");
+    const [input, setInput] = useState("");
     
   function handleSubmit (e) {
+    if (!input.trim()) return;
    e.preventDefault()
-   addToDo(text)
-   setText("")
+   addToDo(input)
+   setInput("")
   }
 return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={text}
-       onChange={(e) =>{setText(e.target.value)}}
+      <input type="text"
+        placeholder="Item..."
+        value={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
       />
       <button type="submit">Добавить</button>
     </form>

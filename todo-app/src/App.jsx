@@ -4,26 +4,24 @@ import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState([
-  { id: 1, text: "найти подработку", status: false },
-  { id: 2, text: "начать самому платить за квартиру", status: false },
-  { id: 3, text: "найти девушку", status: false },
-  { id: 4, text: "выучить React", status: false },
-  { id: 5, text: "выучить js", status: false },
-  { id: 6, text: "выучить HTML and CSS", status: false }
+  { id: 1, text: "найти подработку", completed: false },
+  { id: 2, text: "начать самому платить за квартиру", completed: false },
+  { id: 3, text: "найти девушку", completed: false },
+  { id: 4, text: "выучить React", completed: false },
+  { id: 5, text: "выучить js", completed: false },
+  { id: 6, text: "выучить HTML and CSS", completed: false }
 ]);
  function addToDo (text) {
+  console.log("Сигнал дошел! Текст из формы:", text);
   if (text.trim() === "") return 
-  setTodos(...[todos,{ id: Date.now(), text: text, status: false }])
+  setTodos([...todos,{ id: Date.now(), text: text, completed:false }])
  }
-  function toggleTodo(id) {
-   setTodos(todos.map((todo)=>{
-    if (todo.id=== id) {
-      return  { ...todo, completed: !todo.completed }
-   }
-   return todo
-   })
-   )
-  }
+  
+ function toggleToDo(id) {
+  setTodos(todos.map(todo => 
+    todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+  ));
+}
   function deleteTodo(id) {
  setTodos(todos.filter(todo=> todo.id!==id))
   }
@@ -37,6 +35,7 @@ function App() {
     <TodoList todos={todos}
         addToDo={addToDo}
        deleteTodo ={deleteTodo}
+       toggleTodo={toggleToDo}
     />
       </>
   )

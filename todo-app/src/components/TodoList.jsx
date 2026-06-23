@@ -5,8 +5,8 @@ function TodoList ({todos, deleteTodo, toggleTodo}) {
         <ul>
             {todos.map(todo=>(
                 <li key={todo.id}>
-                    {todo.text}
-                    <TodoItem todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
+                     {todo.text} 
+                     <TodoItem todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>
                 </li>
                 ))}
         </ul>
