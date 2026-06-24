@@ -17,11 +17,12 @@ function App() {
   setTodos([...todos,{ id: Date.now(), text: text, completed:false }])
  }
   
- function toggleToDo(id) {
-  setTodos(todos.map(todo => 
-    todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
-  ));
+
+function toggleToDo(id) {
+  setTodos(todos.map(todo => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo));
 }
+
+
   function deleteTodo(id) {
  setTodos(todos.filter(todo=> todo.id!==id))
   }
@@ -35,7 +36,7 @@ function App() {
     <TodoList todos={todos}
         addToDo={addToDo}
        deleteTodo ={deleteTodo}
-       toggleTodo={toggleToDo}
+       toggleToDo={toggleToDo}
     />
       </>
   )

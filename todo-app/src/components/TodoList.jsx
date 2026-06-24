@@ -12,5 +12,4 @@ function TodoList ({todos, deleteTodo, toggleTodo}) {
         </ul>
     )
 }
-
 export default TodoList
