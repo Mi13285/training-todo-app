@@ -4,17 +4,17 @@ import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState([
-  { id: 1, text: "найти подработку", completed: false },
-  { id: 2, text: "начать самому платить за квартиру", completed: false },
-  { id: 3, text: "найти девушку", completed: false },
-  { id: 4, text: "выучить React", completed: false },
-  { id: 5, text: "выучить js", completed: false },
-  { id: 6, text: "выучить HTML and CSS", completed: false }
+  { id: 1, text: "найти подработку", isCompleted: false },
+  { id: 2, text: "начать самому платить за квартиру", isCompleted: false },
+  { id: 3, text: "найти девушку", isCompleted: false },
+  { id: 4, text: "выучить React", isCompleted: false },
+  { id: 5, text: "выучить js", isCompleted: false },
+  { id: 6, text: "выучить HTML and CSS", isCompleted: true }
 ]);
  function addToDo (text) {
   console.log("Сигнал дошел! Текст из формы:", text);
   if (text.trim() === "") return 
-  setTodos([...todos,{ id: Date.now(), text: text, completed:false }])
+  setTodos([...todos,{ id: Date.now(), text: text, isCompleted:false }])
  }
   
 
@@ -23,7 +23,7 @@ function toggleToDo(id) {
 }
 
 
-  function deleteTodo(id) {
+  function deleteToDo(id) {
  setTodos(todos.filter(todo=> todo.id!==id))
   }
  
@@ -35,7 +35,7 @@ function toggleToDo(id) {
     </div>
     <TodoList todos={todos}
         addToDo={addToDo}
-       deleteTodo ={deleteTodo}
+       deleteToDo ={deleteToDo}
        toggleToDo={toggleToDo}
     />
       </>
