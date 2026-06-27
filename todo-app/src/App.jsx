@@ -13,7 +13,13 @@ function App() {
 ]);
  function addToDo (text) {
   console.log("Сигнал дошел! Текст из формы:", text);
-  if (text.trim() === "" || text.trim().length <= 3) return 
+ if (text.trim().length <= 3) {
+  return;
+}
+const checkAll = text.split('').every(char => char === text[0]);
+if (checkAll) {
+  return;
+}
   setTodos([...todos,{ id: Date.now(), text: text, isCompleted:false }])
  }
   
