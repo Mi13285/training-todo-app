@@ -13,7 +13,7 @@ function App() {
 ]);
  function addToDo (text) {
   console.log("Сигнал дошел! Текст из формы:", text);
-  if (text.trim() === "") return 
+  if (text.trim() === "" || text.trim().length <= 3) return 
   setTodos([...todos,{ id: Date.now(), text: text, isCompleted:false }])
  }
   
