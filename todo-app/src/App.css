@@ -29,8 +29,96 @@ text-decoration: line-through;
 opacity: 0.6;
 }
 .todo-item button {
-border: none;.
+border: none;
 padding:6px 12px;
 border-radius: 4px;
 cursor: pointer;
+}
+ .sort-button {
+          background-color: #4CAF50; 
+          color: rgb(216, 24, 24);              
+          border: none;          
+          padding: 10px 20px;        
+          border-radius: 20px;       
+          cursor: pointer;           
+          font-weight: bold;         
+        }
+        
+        .sort-button:hover {
+          background-color: #45a049; 
+        }
+       /* Настройки фона (чистый CSS, без точек) */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Принудительно растягиваем на всю высоту экрана */
+  width: 100vw;      /* Растягиваем на всю ширину экрана */
+}
+
+body {
+  /* Новый прямой путь к картинке в папке public */
+  background-image: url('/задачи.png') !important; 
+  
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-size: contain !important;  
+  background-blend-mode: overlay !important;
+  background-color: rgba(255, 255, 255, 0.8) !important; 
+  font-family: sans-serif;
+}
+
+
+
+/* ФЛЕКС ТЕПЕРЬ ТУТ: Он выровняет ВСЁ по центру экрана */
+.main-container {
+  display: flex;
+  flex-direction: column;   /* Элементы встанут друг под другом */
+  align-items: center;       /* Выравнивание строго по горизонтальному центру */
+  justify-content: center;   /* Выравнивание по вертикальному центру */
+  min-height: 100vh;         /* Растягивает контейнер на всю высоту экрана */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Блок с заголовком и инпутом */
+.main-container {
+  display: flex;
+  flex-direction: column;   /* Элементы остаются друг под другом */
+  align-items: center;       /* По горизонтали всё по-прежнему строго по центру */
+  
+  /* ИСПРАВЛЕНИЕ: */
+  justify-content: flex-start; /* Прижимаем контент к верху страницы */
+  padding-top: 60px;          /* Задаем аккуратный отступ от самого верха экрана */
+  
+  min-height: 100vh;         
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Стили для списка задач */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Зеленая круглая кнопка */
+.sort-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin: 20px auto 0 auto; /* Центрирует кнопку внутри своего блока */
+}
+
+.sort-button:hover {
+  background-color: #45a049;
 }

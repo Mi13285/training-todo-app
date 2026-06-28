@@ -1,5 +1,5 @@
 
- function TodoItem ({todo, deleteTodo, toggleToDo}) {
+ function TodoItem ({todo, deleteToDo, toggleToDo}) {
     return (
 <div>
      <input
@@ -10,7 +10,7 @@
         }}
          />
     <span style= {todo.isCompleted ?  { textDecoration : "line-through"} : {}}> {todo.text}</span>
-     <button onClick={() =>deleteTodo(todo.id)}> ❌</button>
+     <button onClick={() =>deleteToDo(todo.id)}> ❌</button>
 </div>
 )
  }

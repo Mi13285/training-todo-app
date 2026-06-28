@@ -1,6 +1,7 @@
 import { useState } from 'react'
  import TodoList from './components/TodoList';
 import TodoForm from "./components/TodoForm";
+// import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([
@@ -23,7 +24,9 @@ if (checkAll) {
   setTodos([...todos,{ id: Date.now(), text: text, isCompleted:false }])
  }
   
-
+ function filtertSatus(isCompleted) {
+ setTodos( todos.filter(todo=> todo.isCompleted === isCompleted))
+ }
 function toggleToDo(id) {
   setTodos(todos.map(todo => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo));
 }
@@ -34,7 +37,7 @@ function toggleToDo(id) {
   }
  
   return (
-    <>
+    <div className="main-container">
     <div style={{ padding: '20px', maxWidth: '400px', margin: '0 auto' }}>
       <h1>Мой Список Дел</h1>
       <TodoForm addToDo={addToDo} />
@@ -44,7 +47,7 @@ function toggleToDo(id) {
        deleteToDo ={deleteToDo}
        toggleToDo={toggleToDo}
     />
-      </>
+      </div>
   )
 }
 
