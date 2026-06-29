@@ -1,16 +1,26 @@
-# React + Vite
+# 📱 Кастомное React ToDo-Приложение "Планшет Целей"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Профессиональный таск-менеджер со стилизацией под реальный рабочий планшет. Проект создан в рамках интенсивного изучения коммерческого стека React и спроектирован по сетке грейдов от Junior до Middle+.
 
-Currently, two official plugins are available:
+## 📊 Соответствие техническим грейдам разработки:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🟢 Уровень: Junior (База)
+*   **Добавление новой записи**: Реализована управляемая форма ввода для создания новых задач.
+*   **Отображение списка**: Динамический рендеринг массива данных через React-стейт.
+*   **Удаление записей**: Безопасное удаление элементов из списка по их уникальному ID.
 
-## React Compiler
+### 🟡 Уровень: Junior+ (Продвинутый)
+*   **Ограничение по длине (Валидация)**: Новая запись добавляется только при условии, что её длина меньше или равна N символов.
+*   **Интерактивное переключение статуса**: Мгновенное изменение состояния задачи "Выполнено / Невыполненный" при клике на её название без перезагрузки страницы.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔵 Уровень: Middle (Инженерный)
+*   **Динамическая фильтрация задач**: Полноценная система переключения состояний списка по трем типам: "Все задачи", "Только выполненные" и "Активные (в работе)". Логика построена на базе встроенного метода `Array.prototype.filter()`.
+*   **Интеллектуальный счётчик задач**: Динамическое отображение количества выполненных и невыполненных задач на экране в реальном времени с использованием свойства `.length`.
 
-## Expanding the ESLint configuration
+### ⚡ Уровень: Middle+ (Уникальные фичи проекта)
+*   **🔤 Сортировка по алфавиту**: Добавлена кастомная кнопка сортировки, которая мгновенно выстраивает массив задач по алфавитному порядку.
+*   **🧠 Улучшенная интеллектуальная валидация (Защита от спама)**: Реализована продвинутая проверка входящих данных на базе метода `.every()`. Приложение разбивает строку в массив и полностью блокирует отправку бессмысленного спама одинаковыми буквами (например, "аааа").
+*   **🎨 Авторский кастомный дизайн**: Полный отход от стандартных UI-шаблонов. Интерфейс стилизован под физический планшет с карандашом, что выделяет проект среди конкурентов.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+*Примечание: Алгоритмическая логика и ядро ключевых функций спроектированы мной самостоятельно (на 90%). Финальная оптимизация архитектуры React и синтаксиса доработаны в ходе профессионального код-ревью.*
