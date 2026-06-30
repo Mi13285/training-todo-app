@@ -3,7 +3,7 @@
 ---
 
 ## 🔗 Живое демо проекта (Продакшн):
-👉 **[Открыть приложение на Vercel](https://training-todo-app-pi.vercel.app/)
+👉 **[Открыть приложение на Vercel](https://training-todo-app-pi.vercel.app/)**
 
 ---
 
